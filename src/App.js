@@ -10,15 +10,15 @@ function App() {
 
   //css in js
   const stylesH1 = {
-    backgroundColor: "lightblue",
+    backgroundColor: "pink",
     padding: "10px",
     margin: "0 auto",
     textAlign: "center",
   };
 
   // respuesta a evento
-  function handleImageClick(){
-    console.log("Click en la imagen")
+  function handleImageClick() {
+    console.log("Click en la imagen");
   }
 
   return (
