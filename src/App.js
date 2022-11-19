@@ -1,21 +1,10 @@
 import "./App.css";
+import Button from "./components/Button/Button";
+import Flex from "./components/Flex/Flex";
+import Header from "./components/Header/Header";
+import Item from "./components/ItemListContainer/Item";
 
 function App() {
-  const comision = "40295";
-
-  function mostrarComision() {
-    console.log("log");
-    return `Bienvenida comisión ${comision}`;
-  }
-
-  //css in js
-  const stylesH1 = {
-    backgroundColor: "pink",
-    padding: "10px",
-    margin: "0 auto",
-    textAlign: "center",
-  };
-
   // respuesta a evento
   function handleImageClick() {
     console.log("Click en la imagen");
@@ -23,15 +12,10 @@ function App() {
 
   return (
     <>
-      {/* soy un comentario */}
-      <div>
-        <h1 style={stylesH1}>{mostrarComision()} </h1>
-      </div>
+      <Header />
       <div className="App">
         <header className="App-header">
-          <p>Hola Comisión {comision}</p>
-          <p>{1 + 2 + 3}</p>
-          <br />
+          <p>Hola React</p>
           <img
             onClick={handleImageClick}
             src="https://www.patterns.dev/img/reactjs/react-logo@3x.svg"
@@ -43,8 +27,33 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Learn React
+            <Flex>
+              <Button color="orange">Soy un children</Button>
+              <Button color="darkgreen" text="Learn React" />
+              <Button text="Mas Propiedades" color="purple" size="64px" />
+              <Button text="Click me" />
+            </Flex>
           </a>
+
+          <Item
+            price={200}
+            title="Juego de Ajedrez"
+            description="Lorem Ipsum"
+            imgurl="https://http2.mlstatic.com/D_Q_NP_705846-MLA46245294663_062021-AB.webp"
+          />
+
+          <Item
+            price={500}
+            title="Juego de Mesa"
+            description="Lorem Ipsum"
+            imgurl="https://http2.mlstatic.com/D_Q_NP_712088-MLA44676313815_012021-AB.webp"
+          />
+          <Item
+            price={900}
+            title="Juego de Ciencia"
+            description="Lorem Ipsum"
+            imgurl="/img/ecociencia.webp"
+          />
         </header>
       </div>
     </>
