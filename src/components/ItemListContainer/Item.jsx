@@ -9,7 +9,7 @@ function Item(props) {
       </div>
       <div className="card-detail">
         <h2>{props.title}</h2>
-        <h4>$ {props.price}</h4>
+        <h4 className="priceTag">$ {props.price}</h4>
         <p>{props.description}</p>
       </div>
     </div>

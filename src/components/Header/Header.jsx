@@ -1,6 +1,8 @@
+import Example from "../Bootstrap/Example";
+
 function Header() {
   const comision = "40295";
-  
+
   function mostrarComision() {
     console.log("log");
     return `Bienvenida comisión ${comision}`;
@@ -17,8 +19,9 @@ function Header() {
   return (
     <div>
       <h1 style={stylesH1}>{mostrarComision()} </h1>
+      <Example />
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

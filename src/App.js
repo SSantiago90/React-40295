@@ -34,26 +34,27 @@ function App() {
               <Button text="Click me" />
             </Flex>
           </a>
+          <Flex>
+            <Item
+              price={200}
+              title="Juego de Ajedrez"
+              description="Lorem Ipsum"
+              imgurl="https://http2.mlstatic.com/D_Q_NP_705846-MLA46245294663_062021-AB.webp"
+            />
 
-          <Item
-            price={200}
-            title="Juego de Ajedrez"
-            description="Lorem Ipsum"
-            imgurl="https://http2.mlstatic.com/D_Q_NP_705846-MLA46245294663_062021-AB.webp"
-          />
-
-          <Item
-            price={500}
-            title="Juego de Mesa"
-            description="Lorem Ipsum"
-            imgurl="https://http2.mlstatic.com/D_Q_NP_712088-MLA44676313815_012021-AB.webp"
-          />
-          <Item
-            price={900}
-            title="Juego de Ciencia"
-            description="Lorem Ipsum"
-            imgurl="/img/ecociencia.webp"
-          />
+            <Item
+              price={500}
+              title="Juego de Mesa"
+              description="Lorem Ipsum"
+              imgurl="https://http2.mlstatic.com/D_Q_NP_712088-MLA44676313815_012021-AB.webp"
+            />
+            <Item
+              price={900}
+              title="Juego de Ciencia"
+              description="Lorem Ipsum"
+              imgurl="/img/ecociencia.webp"
+            />
+          </Flex>
         </header>
       </div>
     </>

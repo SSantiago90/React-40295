@@ -1,4 +1,4 @@
-import "./button.css";
+import styles from "./button.module.css";
 
 function Button(props) {
   console.log(props);
@@ -6,7 +6,7 @@ function Button(props) {
   const styleBtn = { backgroundColor: props.color };
 
   return (
-    <button style={styleBtn} className="btn">
+    <button style={styleBtn} className={styles.btn}>
       {props.children || props.text}
     </button>
   );
