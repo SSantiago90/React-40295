@@ -30,10 +30,10 @@ function App() {
             <Flex>
               <Button color="orange">Soy un children</Button>
               <Button color="darkgreen" text="Learn React" />
-              <Button text="Mas Propiedades" color="purple" size="64px" />
               <Button text="Click me" />
             </Flex>
           </a>
+
           <Flex>
             <Item
               price={200}
