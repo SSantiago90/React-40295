@@ -36,6 +36,9 @@
   display: block;
 }
 
+.navbar:hover .card-favicon{
+  display: block;
+}
 .card-favicon{
   display: none;
   position: absolute;

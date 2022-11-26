@@ -1,3 +1,5 @@
+import ToggleButton from "../ToggleButton/ToggleButton";
+
 function Header() {
   const comision = "40295";
 
@@ -15,8 +17,9 @@ function Header() {
   };
 
   return (
-    <div>
+    <div className="navbar">
       <h1 style={stylesH1}>{mostrarComision()} </h1>
+      <ToggleButton icon="☀" />
     </div>
   );
 }
