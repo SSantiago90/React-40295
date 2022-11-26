@@ -42,7 +42,7 @@ function App() {
               imgurl="https://http2.mlstatic.com/D_Q_NP_705846-MLA46245294663_062021-AB.webp"
             />
 
-            <Item
+            {/*    <Item
               price={500}
               title="Juego de Mesa"
               description="Lorem Ipsum"
@@ -53,7 +53,7 @@ function App() {
               title="Juego de Ciencia"
               description="Lorem Ipsum"
               imgurl="/img/ecociencia.webp"
-            />
+            /> */}
           </Flex>
         </header>
       </div>
