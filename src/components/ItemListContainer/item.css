@@ -5,13 +5,13 @@
   width: 280px;
   height: 100%;
   border-radius: 4px;
-  color: black;
   box-shadow: 0px 0px 4px rgba(0,0,0,0.50);
   background-color: #fff;
   overflow: hidden;  
   transition: all 0.20s ease-in;
   cursor: pointer;
 }
+
 .card-img{
   width: 280px;
   height: 260px;
@@ -36,9 +36,6 @@
   display: block;
 }
 
-.navbar:hover .card-favicon{
-  display: block;
-}
 .card-favicon{
   display: none;
   position: absolute;

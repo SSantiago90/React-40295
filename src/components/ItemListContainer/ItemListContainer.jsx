@@ -1,18 +1,24 @@
 import React, { useState, useEffect } from "react";
 // 1. importar la Promise
-import getItems from "../../services/mockService";
+import getItems, { getItemsCategory } from "../../services/mockService";
 import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
 
 function ItemListContainer() {
-  console.log("%cRender/update", "color: green");
-  //2. Creamos un estado para nuestros productos
   const [products, setProducts] = useState([]);
+  const categoryID = useParams().categoryID;
 
-  //3. Creamos un efecto de montaje
   useEffect(() => {
-    //4. Llamamos a la promise, y guardamos la respuesta en un estado
-    getItems().then((respuesta) => setProducts(respuesta));
-  }, []);
+    if (categoryID === undefined) {
+      getItems().then((respuesta) => {
+        setProducts(respuesta);
+      });
+    } else {
+      getItemsCategory(categoryID).then((respuestaFiltrada) =>
+        setProducts(respuestaFiltrada)
+      );
+    }
+  }, [categoryID]);
 
   return <ItemList products={products} />;
 }

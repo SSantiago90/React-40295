@@ -1,29 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function ToggleButton(props) {
-  const [isFavorite, setIsFavorite] = useState(false);
-  // [variableDeEstado, setterDeLaVariable]
+  const [isActive, setIsActive] = useState(false);
 
-  function handleFavorite() {
-    isFavorite === true ? setIsFavorite(false) : setIsFavorite(true);
-    /*  setIsFavorite(!isFavorite); */
+  function handleClick() {    
+    setIsActive(!isActive);
   }
-  /* 
-  console.log("%cRender/update del componente", "color: green");
-
-  useEffect(() => {
-    console.log("%cLlamado a API/Database", "color: pink");
-  }, []);
-
-  useEffect(() => {
-    console.log("%cUpdate del componente en useEffect", "color: yellow");
-  }); */
+  // npm classname
+  let classNameButton = isActive ? "card-favicon favorite" : "card-favicon";
 
   return (
-    <button
-      onClick={handleFavorite}
-      className={isFavorite ? "card-favicon favorite" : "card-favicon"}
-    >
+    <button className={classNameButton} onClick={handleClick}>
       {props.icon}
     </button>
   );
