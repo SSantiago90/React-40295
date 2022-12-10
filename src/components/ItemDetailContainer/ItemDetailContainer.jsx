@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { getSingleItem } from "../../services/mockService";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./itemdetail.css";
+import ItemCount from "./ItemCount/ItemCount";
+import { cartContext } from "../../storage/cartContext";
 
 function ItemDetailContainer() {
   const [product, setProduct] = useState([]);
+  const [countInCart, setCountInCart] = useState(0)
   
+  const { addToCart, removeItem } = useContext(cartContext);
+
   let { itemID } = useParams();
 
   /* useEffect(() => {
@@ -25,6 +30,13 @@ function ItemDetailContainer() {
     getData();
   }, [])
   
+  function handleAddToCart(count) {
+      //1. Guardar la cantidad en un estado
+      setCountInCart(count);
+      addToCart(product, count)
+      //2. ocultar el itemCount . . .
+  }
+
   return (
     <div className="card-detail_main">
       <div className="card-detail_img">
@@ -35,7 +47,10 @@ function ItemDetailContainer() {
         <h4 className="priceTag">$ {product.price}</h4>
         <p>{product.description}</p>
       </div>
-      {/* <ItemCount> */}
+      <ItemCount onAddToCart={handleAddToCart}/>
+      
+      <button onClick={()=>removeItem(product.id)}></button>
+      <Link to="/cart">Ir al carrito</Link>
     </div>
   );
 }

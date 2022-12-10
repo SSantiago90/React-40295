@@ -1,14 +1,18 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import CartWidget from "./CartWidget";
+import "./navbar.css";
 
-function NavBar() {
+function NavBar(props) {
   let activeStyle = {
     color: "red",
     textDecoration: "underline",
   };
 
+  //onNavigate
+
   return (
-    <nav className="navbar">
+    <nav onClick={()=>props.onNavigate("/contacto")} className="nav-menu">
       <NavLink
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
         to="/"
@@ -27,6 +31,7 @@ function NavBar() {
       >
         Contacto
       </NavLink>
+      <CartWidget/>
     </nav>
   );
 }

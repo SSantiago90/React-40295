@@ -11,7 +11,7 @@ function Button(props) {
   }
 
   return (
-    <button onClick={changeColor} style={styleBtn} className={styles.btn}>
+    <button onClick={props.onButtonTouch} style={styleBtn} className={styles.btn}>
       {props.children || props.text}
     </button>
   );
