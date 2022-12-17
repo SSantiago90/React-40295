@@ -6,12 +6,12 @@ function Button(props) {
 
   const styleBtn = { backgroundColor: colorButton };
 
-  function changeColor() {
-    setColorButton("red");
-  }
-
   return (
-    <button onClick={props.onButtonTouch} style={styleBtn} className={styles.btn}>
+    <button
+      onClick={props.onButtonTouch}
+      style={styleBtn}
+      className={styles.btn}
+    >
       {props.children || props.text}
     </button>
   );

@@ -11,8 +11,8 @@ function ItemDetail({ product }) {
   function handleAddToCart(count) {
     //1. Guardar la cantidad en un estado
     setCountInCart(count);
-    addToCart(product, count);
     //2. ocultar el itemCount . . .
+    addToCart(product, count);
   }
 
   return (
@@ -25,10 +25,8 @@ function ItemDetail({ product }) {
         <h4 className="priceTag">$ {product.price}</h4>
         <p>{product.description}</p>
       </div>
-      <ItemCount onAddToCart={handleAddToCart} />
-
-      <button onClick={() => removeItem(product.id)}>X</button>
       <Link to="/cart">Ir al carrito</Link>
+      <ItemCount onAddToCart={handleAddToCart} />
     </div>
   );
 }

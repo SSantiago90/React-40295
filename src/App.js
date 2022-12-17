@@ -8,8 +8,10 @@ import NavBar from "./components/NavBar/NavBar";
 
 import { CartContextProvider } from "./storage/cartContext";
 import CartContainer from "./components/CartContainer/CartContainer";
+import { getItems } from "./services/firebase";
 
 function App() {
+  getItems();
   return (
     <CartContextProvider>
       <BrowserRouter>

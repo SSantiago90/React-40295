@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-// 1. importar la Promise
-import getItems, { getItemsCategory } from "../../services/mockService";
+
+import { getItems, getItemsCategory } from "../../services/firebase";
+
 import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
@@ -27,7 +28,7 @@ function ItemListContainer() {
 
   // 3. Return con if temprano - early "return"
   if (isLoading) {
-    return <Loader/>
+    return <Loader />;
   }
 
   return <ItemList products={products} />;
