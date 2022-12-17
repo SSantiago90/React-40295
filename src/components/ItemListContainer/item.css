@@ -70,3 +70,7 @@ small{
 .offerTag{
   color: #21b276
 }
+
+.item-new{
+  border: solid 2px blue;
+}

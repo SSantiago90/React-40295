@@ -15,10 +15,8 @@ export function getItemsCategory(categoryID) {
       return item.category === categoryID;
     });
 
-    if (itemsFound.length > 0 )
-      resolve(itemsFound);
-    else 
-    reject("No hay productos para esta categoría.")
+    if (itemsFound.length > 0) resolve(itemsFound);
+    else reject("No hay productos para esta categoría.");
   });
 }
 

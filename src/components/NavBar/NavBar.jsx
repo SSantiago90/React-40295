@@ -3,16 +3,14 @@ import { NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import "./navbar.css";
 
-function NavBar(props) {
+function NavBar() {
   let activeStyle = {
     color: "red",
     textDecoration: "underline",
   };
 
-  //onNavigate
-
   return (
-    <nav onClick={()=>props.onNavigate("/contacto")} className="nav-menu">
+    <nav className="nav-menu">
       <NavLink
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
         to="/"
@@ -21,17 +19,29 @@ function NavBar(props) {
       </NavLink>
       <NavLink
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
-        to="/item/1"
+        to="/category/laptops"
       >
-        Detalle
+        Laptops
       </NavLink>
       <NavLink
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
-        to="/contacto"
+        to="/category/smartphones"
       >
-        Contacto
+        Smartphones
       </NavLink>
-      <CartWidget/>
+      <NavLink
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        to="/category/fragrances"
+      >
+        Fragrances
+      </NavLink>
+      <NavLink
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+        to="/category/skincare"
+      >
+        Skincare
+      </NavLink>
+      <CartWidget />
     </nav>
   );
 }

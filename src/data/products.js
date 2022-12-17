@@ -7,10 +7,12 @@ const products = [
     price: 649,
     img: "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
     description: "An apple mobile which is nothing like apple",
+    discount: 50,
   },
   {
     id: 2,
     title: "iPhone X",
+    newProduct: true,
     description:
       "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
     price: 899,
@@ -56,6 +58,7 @@ const products = [
     stock: 50,
     category: "laptops",
     img: "https://dummyjson.com/image/i/products/7/thumbnail.jpg",
+    discount: 40,
   },
   {
     id: 8,
@@ -76,6 +79,7 @@ const products = [
     stock: 96,
     category: "laptops",
     img: "https://dummyjson.com/image/i/products/9/thumbnail.jpg",
+    newProduct: true,
   },
   {
     id: 10,
