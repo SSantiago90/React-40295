@@ -9,6 +9,7 @@ import NavBar from "./components/NavBar/NavBar";
 import { CartContextProvider } from "./storage/cartContext";
 import CartContainer from "./components/CartContainer/CartContainer";
 import { getItems } from "./services/firebase";
+import ThankYou from "./components/ThankYou/ThankYou";
 
 function App() {
   getItems();
@@ -25,7 +26,7 @@ function App() {
           <Route path="/contacto/" element={<Contacto />} />
 
           <Route path="/cart" element={<CartContainer />} />
-
+          <Route path="/thankyou/:orderID" element={<ThankYou />} />
           <Route path="*" element={<h1>404: Recurso no encontrado</h1>} />
         </Routes>
       </BrowserRouter>
