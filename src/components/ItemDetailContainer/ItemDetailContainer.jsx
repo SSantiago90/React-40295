@@ -25,7 +25,6 @@ function ItemDetailContainer() {
   // 1. Rendering con condicional ternario
   return (
     <>
-      <h2>Detalle del producto</h2>
       {isLoading ? <Loader color="green" /> : <ItemDetail product={product} />}
     </>
   );

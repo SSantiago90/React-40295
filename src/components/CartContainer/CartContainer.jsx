@@ -1,26 +1,52 @@
 import React, { useContext } from "react";
 import { cartContext } from "../../storage/cartContext";
-//1. Traer el array del context
-//2. desgloasar o "mapear" los items
+import Button from "../Button/Button";
+
+import "./cart.css";
 
 function CartContainer() {
-  const { cart, removeItem } = useContext(cartContext);
-
-  //render condicional -> "carrito vacío , volvé al inicio"
+  const { cart } = useContext(cartContext);
 
   return (
-    <div>
-      <h1>Tu carrito</h1>
-      {cart.map((item) => (
-        <div>
-          <h3>{item.title}</h3>
-          <p>cantidad: {item.count}</p>
-          <p>$ {item.price}</p>
-          <h4>total: ${}</h4>
-          <button>X</button>
-        </div>
-      ))}
-    </div>
+    <>
+      <h1>Tu Carrito</h1>
+      <table className="cartList">
+        <thead className="cartList_head">
+          <tr className="cartList_row">
+            <th>Miniatura</th>
+            <th>Titulo</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Remover</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cart.map((item) => {
+            return (
+              <tr key={item.id} className="cartList_row">
+                <td>
+                  <img height={50} src={item.img} alt={item.title} />
+                </td>
+                <td>{item.title}</td>
+                <td>$ {item.price}</td>
+                <td>{item.count}</td>
+                <td>
+                  <Button color="#c63224" onClick={item.removeItem}>
+                    X
+                  </Button>
+                </td>
+                <th>$ --,--</th>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+      <div className="cartList_detail">
+        <h4>El total de tu compra es de $ --,--</h4>
+        <Button color="#3353d3">Finalizar Compra</Button>
+      </div>
+    </>
   );
 }
 

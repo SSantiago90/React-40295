@@ -5,8 +5,8 @@ import "./navbar.css";
 
 function NavBar() {
   let activeStyle = {
-    color: "red",
-    textDecoration: "underline",
+    color: "black",
+    fontWeight: "bolder",
   };
 
   return (
