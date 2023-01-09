@@ -6,13 +6,20 @@ import { cartContext } from "../../storage/cartContext";
 function ItemDetail({ product }) {
   const [countInCart, setCountInCart] = useState(0);
 
-  const { addToCart, removeItem } = useContext(cartContext);
+  const { getItemCountfromCart, addToCart } = useContext(cartContext);
 
   function handleAddToCart(count) {
     //1. Guardar la cantidad en un estado
     setCountInCart(count);
     //2. ocultar el itemCount . . .
     addToCart(product, count);
+  }
+
+  function calcStock() {
+    let cantInCart = getItemCountfromCart(product.id);
+    console.log("Cantidad->", cantInCart);
+    if (cantInCart) return product.stock - cantInCart;
+    else return product.stock;
   }
 
   return (
@@ -26,7 +33,11 @@ function ItemDetail({ product }) {
         <p>{product.description}</p>
       </div>
       <Link to="/cart">Ir al carrito</Link>
-      <ItemCount onAddToCart={handleAddToCart} />
+      {calcStock() >= 1 ? (
+        <ItemCount stock={calcStock()} onAddToCart={handleAddToCart} />
+      ) : (
+        <h3>No hay stock disponible</h3>
+      )}
     </div>
   );
 }

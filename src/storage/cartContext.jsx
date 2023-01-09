@@ -43,6 +43,15 @@ function CartContextProvider(props) {
     return totalItemsInCart;
   }
 
+  function getItemFromCart(id) {
+    return cart.find((item) => item.id === id);
+  }
+
+  function getItemCountfromCart(id) {
+    let itemInCart = cart.find((item) => item.id === id);
+    return itemInCart?.count;
+  }
+
   // function removeItem(id) -> filter
 
   // function emptyCart() -> []
@@ -57,6 +66,7 @@ function CartContextProvider(props) {
         addToCart,
         totalItemsInCart,
         totalItemsInCartfn,
+        getItemCountfromCart,
       }}
     >
       {props.children}
